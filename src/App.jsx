@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Login from './paginas/Login'
 import Cadastro from './paginas/Cadastro'
+import Usuarios from './paginas/Usuarios'
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       return <Login/>
     } else if (tela === 'cadastro') {
       return <Cadastro/>
+    } else if (tela === 'usuarios') {
+      return <Usuarios/>
     } else {
       return <Login/>
     }
