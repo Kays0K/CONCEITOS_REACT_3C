@@ -1,23 +1,34 @@
 import { useState } from 'react'
 import './App.css'
+import Login from './paginas/Login'
+import Cadastro from './paginas/Cadastro'
+
 
 function App() {
-  const [carro, setCarro] = useState ('BMW')
+  const [tela, setTela] = useState('login')
 
-  function trocarDeCarro() {
-    if (carro === "Mustang"){
-    setCarro("BMW")
+  const trocarDeTela = (pagina) => {
+    setTela(pagina)
   }
 
-    else {
-      setCarro("Mustang")
+  const renderizar = () => {
+    if (tela === 'login') {
+      return <Login/>
+    } else if (tela === 'cadastro') {
+      return <Cadastro/>
+    } else {
+      return <Login/>
     }
   }
 
   return (
     <>
-    <h1>{carro}</h1>
-    <button onClick={trocarDeCarro}>Trocar de carro</button>
+      <button onClick={() => trocarDeTela('cadastro')}>Cadastro</button>
+      <button onClick={() => trocarDeTela('login')}>Login</button>
+
+      <hr />
+
+      return {renderizar()}
     </>
   )
 }
