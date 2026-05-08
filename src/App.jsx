@@ -28,10 +28,12 @@ function App() {
     <>
       <button onClick={() => trocarDeTela('cadastro')}>Cadastro</button>
       <button onClick={() => trocarDeTela('login')}>Login</button>
+      <button onClick={() => trocarDeTela('usuarios')}>Usuarios</button>
+      
 
       <hr />
 
-      return {renderizar()}
+      {renderizar()}
     </>
   )
 }
